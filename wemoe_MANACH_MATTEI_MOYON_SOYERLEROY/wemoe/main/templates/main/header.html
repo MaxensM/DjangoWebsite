@@ -1,0 +1,34 @@
+{% block header %}
+<div id="banniere">
+<span class="helper"></span>
+<a href="{% url 'index' %}" class="custom-logo-link" rel="home" itemprop="url">
+    <img width="513" height="100" src="{% static 'images/cropped-logoWeMoe.jpg' %}" class="custom-logo" alt="" itemprop="logo"/>
+</a>
+<p class="site-title"><a href="{% url 'index' %}" rel="home"></a></p>
+</div>
+<div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"> <a href="{% url 'index' %}">Accueil</a> </li>
+            <li> <a href="{% url 'index' %}">Génèse du projet</a> </li>
+            <li> <a href="{% url 'index' %}">L'équipe</a> </li>
+            <li> <a href="{% url 'index' %}">Enquête</a> </li>
+            <li> <a href="{% url 'index' %}">Contact</a> </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <li> <a href="{% url 'conseils' %}">Conseils</a></li>
+                <li> <a href="{% url 'index' %}">Mon Compte</a></li>
+                <li><a href="{% url 'deconnexion' %}"><span class="glyphicon glyphicon-log-out_"></span> Deconnexion</a></li>
+            {% else %}
+                <li><a href="{% url 'connexion' %}"><span class="glyphicon glyphicon-user"></span> Connexion</a></li>
+                <li><a href="{% url 'enregistrement' %}"><span class="glyphicon glyphicon-log-in"></span> Inscription</a></li>
+            {% endif %}
+        </ul>
+        </div>
+    </nav>
+</div>
+
+
+{% endblock %}

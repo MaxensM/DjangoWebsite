@@ -1,0 +1,43 @@
+#banniere {
+    text-align: center;
+}
+
+#banniere .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#banniere img {
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;/*Pour que le lien ne soit plus "souligné"...*/
+    color: black; /*ça reste un exemple*/
+}
+
+.inline-form input {
+
+            display: inline-block;
+
+            width: 100px;
+
+        }
+
+.navbar {
+
+  position: relative;
+
+  min-height: 50px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid transparent;
+
+}
+
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}

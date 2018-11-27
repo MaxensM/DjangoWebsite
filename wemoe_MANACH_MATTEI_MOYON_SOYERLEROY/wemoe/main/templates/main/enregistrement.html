@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+  <h2>Creation de compte</h2>
+  <form method="post" role="form" action="{% url 'enregistrement' %}">
+    {% csrf_token %}
+
+    {% for field in form %}
+      <p>
+
+        {% if field.name == "username" %}
+          <b>Login:</b><br>
+
+        {% elif field.name == "password1" %}
+          <b>Mot de Passe:</b><br>
+
+        {% elif field.name == "password2" %}
+          <b>Confirmez le Mot de Passe:</b><br>
+
+        {% else %}
+          {{field.label_tag}}<br>
+
+        {% endif %}
+
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+
+        {{ field }}
+        {% if field.help_text %}
+        {% endif %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
